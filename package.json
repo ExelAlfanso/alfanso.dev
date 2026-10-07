@@ -1,54 +1,38 @@
 {
-  "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.4.2",
-    "@react-three/postprocessing": "^3.0.4",
-    "@tailwindcss/vite": "^4.1.11",
-    "gsap": "^3.13.0",
-    "lucide-react": "^0.525.0",
-    "motion": "^12.23.9",
-    "ogl": "^1.0.11",
-    "postcss": "^8.5.6",
-    "postprocessing": "^6.37.6",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-router-dom": "^7.10.1",
-    "swiper": "^11.2.10",
-    "three": "^0.178.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.4.16",
-    "@eslint/js": "^9.30.1",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
-    "eslint": "^9.30.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "lefthook": "^2.1.9",
-    "tailwindcss": "^4.1.11",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.35.1",
-    "ultracite": "^7.8.4",
-    "vite": "^7.0.4"
-  },
   "name": "alfanso-portfolio-new",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "check": "ultracite check",
-    "fix": "ultracite fix",
-    "prepare": "lefthook install"
-  },
-  "type": "module",
   "version": "0.0.0",
   "private": true,
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "type": "module",
+  "scripts": {
+    "alchemy:profile:edit": "alchemy profile edit",
+    "build": "turbo run build",
+    "cf:deploy": "alchemy deploy --stage prod --env-file .env",
+    "cf:deploy:plan": "alchemy deploy --stage prod --env-file .env --dry-run",
+    "cf:login": "pnpm --filter @alfanso/api exec wrangler login",
+    "check": "ultracite check",
+    "db:migrate:local": "pnpm --filter @alfanso/api db:migrate:local",
+    "dev": "turbo run dev",
+    "fix": "ultracite fix",
+    "lint": "turbo run lint",
+    "media:upload": "node scripts/upload-public-images.mjs",
+    "media:upload:local": "node scripts/upload-public-images.mjs --local",
+    "prepare": "lefthook install",
+    "preview": "pnpm --filter @alfanso/web preview"
+  },
+  "dependencies": {
+    "@effect/platform-bun": "^4.0.0-rc.118",
+    "@effect/platform-node": "^4.0.0-rc.118",
+    "@tanstack/react-query": "^5.104.1",
+    "@trpc/client": "^11.19.0",
+    "@trpc/server": "^11.19.0",
+    "@trpc/tanstack-react-query": "^11.19.0",
+    "alchemy": "^2.0.0-beta.81",
+    "effect": "^4.0.0-rc.118"
+  },
+  "devDependencies": {
+    "lefthook": "^2.1.9",
+    "turbo": "^2.5.6",
+    "ultracite": "^7.8.4"
+  },
+  "packageManager": "pnpm@10.20.0"
 }

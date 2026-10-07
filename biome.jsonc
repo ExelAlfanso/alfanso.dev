@@ -8,7 +8,25 @@
       },
       "correctness": {
         "useImageSize": "off"
+      },
+      "performance": {
+        "noJsxPropsBind": "off"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "apps/web/src/Components/background/dither.tsx",
+        "apps/web/src/features/tech-stack/components/exel.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noUnknownAttribute": "off"
+          }
+        }
+      }
+    }
+  ]
 }
