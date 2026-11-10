@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ id, className }) => (
       <div className="items-left mb-5 flex flex-row gap-5 font-accent">
         <div className="flex flex-row items-center gap-2">
           <Copyright className="my-2 w-4 text-accent" />
-          <Text className="text-xs sm:text-base">2025 alfanso.xyz</Text>
+          <Text className="text-xs sm:text-base">2025 alfanso.dev</Text>
         </div>
       </div>
       <Text className="font-accent text-xs sm:text-base">

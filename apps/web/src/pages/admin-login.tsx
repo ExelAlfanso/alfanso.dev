@@ -4,6 +4,8 @@ import { Navigate, useLocation } from "react-router-dom";
 import { authClient } from "../lib/auth-client";
 import { getUserRole, hasSession } from "../lib/auth-session";
 
+const dashboardPath = "/admin/cms";
+
 export default function AdminLogin() {
   const location = useLocation();
   const session = authClient.useSession();
@@ -13,21 +15,14 @@ export default function AdminLogin() {
       : ""
   );
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const nextPath =
-    typeof location.state === "object" &&
-    location.state &&
-    "from" in location.state &&
-    typeof location.state.from === "string"
-      ? location.state.from
-      : "/admin";
-
   async function loginWithGoogle() {
     setErrorMessage("");
     setIsSubmitting(true);
 
     try {
       const result = await authClient.signIn.social({
-        callbackURL: nextPath,
+        callbackURL: new URL(dashboardPath, window.location.origin).href,
+        errorCallbackURL: new URL("/", window.location.origin).href,
         provider: "google",
       });
 
@@ -56,7 +51,7 @@ export default function AdminLogin() {
   }
 
   if (getUserRole(session.data) === "admin") {
-    return <Navigate replace to={nextPath} />;
+    return <Navigate replace to={dashboardPath} />;
   }
 
   if (hasSession(session.data)) {

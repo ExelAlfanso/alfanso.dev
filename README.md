@@ -1,4 +1,4 @@
-# alfanso.xyz
+# alfanso.dev
 
 Portfolio and admin CMS. The Vite frontend lives in `apps/web`; the Hono API, Better Auth, and R2 media handler live in `apps/api`; D1 schema and migrations live in `packages/db`.
 
@@ -36,7 +36,7 @@ Open `http://localhost:5173/admin/login`. Password sign-in is disabled. Google O
 
 ## Production configuration
 
-`alchemy.run.ts` deploys the API Worker to `api.alfanso.xyz` and the Vite website from `apps/web` to `alfanso.xyz`, alongside the private `alfanso-cms-media` R2 bucket and D1 database. The Cloudflare zone for `alfanso.xyz` must exist in the same Cloudflare account; Alchemy creates the custom-domain DNS records and certificates on deployment. This repository change does not deploy these resources or change live DNS.
+`alchemy.run.ts` deploys the API Worker to `api.alfanso.dev` and the Vite website from `apps/web` to the `alfanso.dev` custom domain, alongside the private `alfanso-cms-media` R2 bucket and D1 database. The Cloudflare zone must exist in the same account. Alchemy manages DNS and certificates for the website and API domains, and redirects `www.alfanso.dev` to `alfanso.dev`.
 
 Set these values in the Alchemy environment before deployment:
 
@@ -46,8 +46,8 @@ Set these values in the Alchemy environment before deployment:
 
 For the production Google OAuth client, add:
 
-- Authorized redirect URI: `https://api.alfanso.xyz/api/auth/callback/google`
-- Authorized JavaScript origin: `https://alfanso.xyz` (and `https://www.alfanso.xyz` if used)
+- Authorized redirect URI: `https://api.alfanso.dev/api/auth/callback/google`
+- Authorized JavaScript origin: `https://alfanso.dev` (and `https://www.alfanso.dev` if used)
 
 Alchemy injects the public API origin into the Vite build as `VITE_API_URL`. No Better Auth or Google secret is exposed to Vite.
 

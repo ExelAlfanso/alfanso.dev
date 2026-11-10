@@ -20,14 +20,15 @@
     "preview": "pnpm --filter @alfanso/web preview"
   },
   "dependencies": {
-    "@effect/platform-bun": "^4.0.0-rc.118",
-    "@effect/platform-node": "^4.0.0-rc.118",
+    "@alchemy.run/cloudflare": "2.0.0-beta.85",
+    "@effect/platform-bun": "^4.1.3",
+    "@effect/platform-node": "^4.1.3",
     "@tanstack/react-query": "^5.104.1",
     "@trpc/client": "^11.19.0",
     "@trpc/server": "^11.19.0",
     "@trpc/tanstack-react-query": "^11.19.0",
-    "alchemy": "^2.0.0-beta.81",
-    "effect": "^4.0.0-rc.118"
+    "alchemy": "2.0.0-beta.85",
+    "effect": "^4.1.3"
   },
   "devDependencies": {
     "lefthook": "^2.1.9",

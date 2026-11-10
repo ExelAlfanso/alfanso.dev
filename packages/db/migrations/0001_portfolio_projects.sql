@@ -35,7 +35,7 @@ INSERT INTO `project` (
     'one-deep-question', 'One Deep Question',
     'projects/one-deep-question.png', 'PERSONAL', 'WEB DEVELOPMENT',
     'One Deep Question is a reflective web product centered on a single shared daily prompt. Every user sees the same question on a given date. Users can submit one public response per browser per day, either anonymously or under a custom display name, and read other responses in a calm, reading-first interface.',
-    'https://one-deep-question.alfanso.xyz/',
+    'https://one-deep-question.alfanso.dev/',
     '["Next.JS","PostgreSQL","Drizzle"]',
     CAST(strftime('%s','now') AS INTEGER) * 1000 + 11000,
     CAST(strftime('%s','now') AS INTEGER) * 1000 + 11000

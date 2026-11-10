@@ -36,7 +36,7 @@ export default function SplashScreen() {
           transition={{ delay: 1, duration: 0.5 }}
         >
           <span className="font-heading text-xl tracking-wide">
-            alfanso.xyz
+            alfanso.dev
           </span>
         </motion.div>
       </div>
